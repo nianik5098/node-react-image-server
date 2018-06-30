@@ -1,0 +1,23 @@
+{
+  "name": "BigPrint",
+  "version": "1.0.0",
+  "description": "We print your imagination",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "engines": {
+    "node": "8.11.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^4.13.13"
+  }
+}
