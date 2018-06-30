@@ -2,3 +2,5 @@
 
 ---
 
+Run `npm install` in root directory & in client
+
