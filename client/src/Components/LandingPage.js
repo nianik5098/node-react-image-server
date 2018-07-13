@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Header from './Header';
 
-export default class Restaurants extends Component {
+export default class LandingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
