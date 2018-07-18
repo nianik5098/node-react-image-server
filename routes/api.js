@@ -1,25 +1,25 @@
 const express = require('express');
 const apiRouter = express.Router();
 
-const Profiles = require('../model/Profiles');
+const User = require('../model/User');
 
-apiRouter.route('/profiles')
+apiRouter.route('/user')
     .get(function(req, res) {
-        Profiles.find(function(err, profiles) {
+        User.find(function(err, users) {
             if (err)
                 res.send(err);
-            res.json(profiles);
+            res.json(users);
         });
     })
     .post(function(req, res) {
-        const profile = new Profiles();
-        profile.name = req.body.name;
-        profile.email = req.body.email;
-        profile.password = req.body.password;
+        const user = new User();
+        user.name = req.body.name;
+        user.email = req.body.email;
+        user.password = req.body.password;
 
-        console.log(profile);
+        console.log(user);
 
-        profile.save(function(err, doc) {
+        User.save(function(err, doc) {
             if (err)
                 res.send(err);
             res.json(doc);

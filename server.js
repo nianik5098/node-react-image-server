@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+const config = require('./settings/config');
 
 const app = express();
 
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://username:password@link:port/db', { useMongoClient: true })
+mongoose.connect(config.dbUrl, { useMongoClient: true })
     .then(() => { // if all is ok we will be here
         console.log('Db initialized');
         
