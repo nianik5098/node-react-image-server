@@ -1,6 +1,5 @@
 //Comment.js
 import React, {Component} from 'react';
-import axios from 'axios';
 import Header from './Header';
 
 export default class LandingPage extends Component {
