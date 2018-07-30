@@ -1,7 +1,7 @@
 const express = require('express');
 const apiRouter = express.Router();
 
-const User = require('../model/User');
+const User = require('../models/User');
 
 apiRouter.route('/user')
     .get(function(req, res) {
