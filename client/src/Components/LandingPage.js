@@ -1,6 +1,7 @@
 //Comment.js
 import React, {Component} from 'react';
 import Header from './Header';
+import axios from 'axios';
 
 export default class LandingPage extends Component {
     constructor(props) {
@@ -24,6 +25,23 @@ export default class LandingPage extends Component {
         
 
     }
+    
+    state = {selectedFile: null}
+
+    fileChangedHandler = (event) => {
+      this.setState({selectedFile: event.target.files[0]})
+    }
+
+    uploadHandler = () => { 
+      const formData = new FormData()
+      formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
+      axios.post('http://localhost:8080/images/upload/', formData).then(response => { 
+	        console.log(response)
+        })
+        .catch(error => {
+            console.log(error.response)
+        });
+    }
 
     render() {
 
@@ -31,6 +49,10 @@ export default class LandingPage extends Component {
             <div className="App container-fluid">
                 <Header />
                 <h1> body </h1>
+                <div>
+                    <input type="file" onChange={this.fileChangedHandler}/>
+                    <button onClick={this.uploadHandler}>Upload!</button>
+                </div>
             </div>
         )
     }

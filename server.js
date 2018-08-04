@@ -1,12 +1,22 @@
-/*const express = require('express');
+'use strict'
+
+const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 5000;
+//const port = process.env.PORT || 5000;
 const config = require('./settings/config');
 
 const app = express();
+
+const multer = require('multer')
+const fileType = require('file-type')
+const fs = require('fs')
+//const app = express()
+const router = express.Router()
+
+const port = process.env.PORT || 8080;
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(config.dbUrl, { useMongoClient: true })
@@ -33,7 +43,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-
+/*
 // Serve static files from the React app
 
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -49,21 +59,7 @@ app.use(function(req, res) {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
-
-app.listen(port);
-console.log(`Bigprint listening on ${port}`);*/
-
-
-'use strict'
-
-const express = require('express')
-const multer = require('multer')
-const fileType = require('file-type')
-const fs = require('fs')
-const app = express()
-const router = express.Router()
-
-const port = process.env.PORT || 8080;
+*/
 
 const upload = multer({
     dest:'images/', 
@@ -122,5 +118,5 @@ app.use((err, req, res, next) => {
 })
 
 
-app.listen(port)
-console.log(`App Runs on ${port}`)
+app.listen(port);
+console.log(`Bigprint listening on ${port}`);
