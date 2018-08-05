@@ -8,12 +8,11 @@ const bodyParser = require('body-parser');
 //const port = process.env.PORT || 5000;
 const config = require('./settings/config');
 
-const app = express();
-
 const multer = require('multer')
 const fileType = require('file-type')
 const fs = require('fs')
-//const app = express()
+
+const app = express()
 const router = express.Router()
 
 const port = process.env.PORT || 8080;
@@ -76,7 +75,7 @@ const upload = multer({
 }).single('image')
 
 router.post('/images/upload', (req, res) => {
-
+    console.log(req.file);
     upload(req, res, function (err) {
 
         if (err) {

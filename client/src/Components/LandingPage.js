@@ -34,8 +34,11 @@ export default class LandingPage extends Component {
 
     uploadHandler = () => { 
       const formData = new FormData()
-      formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
-      axios.post('http://localhost:8080/images/upload/', formData).then(response => { 
+      formData.append('image', this.state.selectedFile, this.state.selectedFile.name);
+      console.log(formData);
+      //axios.post('http://localhost:8080/images/upload/', this.state.image)
+      axios.post('http://localhost:8080/images/upload/', formData)
+      .then(response => { 
 	        console.log(response)
         })
         .catch(error => {
