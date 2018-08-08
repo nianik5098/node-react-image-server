@@ -37,7 +37,7 @@ export default class LandingPage extends Component {
       formData.append('image', this.state.selectedFile, this.state.selectedFile.name);
       console.log(formData);
       //axios.post('http://localhost:8080/images/upload/', this.state.image)
-      axios.post('http://localhost:8080/images/upload/', formData)
+      axios.post('/images/upload/', formData)
       .then(response => { 
 	        console.log(response)
         })
