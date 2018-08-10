@@ -3,6 +3,7 @@ const imageRouter = express.Router();
 const multer = require('multer')
 const fileType = require('file-type')
 const fs = require('fs')
+const Jimp = require('jimp');
 
 //const app = express()
 //const router = express.Router()
@@ -37,7 +38,7 @@ imageRouter.post('/upload', (req, res) => {
             let path = `/images/${req.file.filename}`
             res.status(200).json({message: 'Image Uploaded Successfully !', path: path})
             
-            
+            image_controller.image_create(req);
         }
     })
 })
@@ -53,10 +54,5 @@ imageRouter.get('/:imagename', (req, res) => {
 	res.end(image, 'binary')
 })
 
-// a simple test url to check that all of our files are communicating correctly.
-imageRouter.post('/saveImage', image_controller.image_create);
-imageRouter.get('/fetchImage', image_controller.image_read);
-imageRouter.post('/updateImage', image_controller.image_update);
-imageRouter.post('/deleteImage', image_controller.image_delete);
 
 module.exports = imageRouter;

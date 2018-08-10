@@ -10,20 +10,24 @@ const ImagesSchema = new Schema({
 });
 
 
-ImagesSchema.statics.image_create = function (req, res){
-    let newImage = new this(
+ImagesSchema.statics.image_create = function (req){
+    //console.log("ashlam", req.file.originalname)
+    const newImage = new this(
         {
             main_name: req.file.originalname,
             new_name: req.file.filename,
             uri: req.file.path 
         }
     );
-
+    //console.log("ashlam1", req.file.filename)
     newImage.save(function (err) {
+        //console.log("ashlam2")
         if (err) {
+            console.log("ashlam3")
             return next(err);
         }
-        res.send('Image saved successfully')
+        //res.send('Image saved successfully')
+        //console.log("ashlam4")
     })
 }
 
