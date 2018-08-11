@@ -1,7 +1,7 @@
 //Comment.js
 import React, {Component} from 'react';
 import Header from './Header';
-import ImagePage from './ImagePage';
+import ImagePage from './ImagePage/ImagePage';
 
 export default class LandingPage extends Component {
     constructor(props) {

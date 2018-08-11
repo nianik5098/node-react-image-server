@@ -1,11 +1,11 @@
 {
-  "name": "BoilerPlate",
+  "name": "Node-React_Image_Server",
   "version": "1.0.0",
   "description": "We print your imagination",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
@@ -21,6 +21,7 @@
     "file-type": "^5.2.0",
     "jimp": "^0.3.2",
     "mongoose": "^4.13.13",
-    "multer": "^1.3.0"
+    "multer": "^1.3.0",
+    "progress-stream": "^2.0.0"
   }
 }

@@ -26,7 +26,7 @@ const upload = multer({
 }).single('image')
 
 imageRouter.post('/upload', (req, res) => {
-    //console.log(req.file, "anik");
+    console.log(req.file, "anik");
     upload(req, res, function (err) {
 
         if (err) {
@@ -38,7 +38,7 @@ imageRouter.post('/upload', (req, res) => {
             let path = `/images/${req.file.filename}`
             res.status(200).json({message: 'Image Uploaded Successfully !', path: path})
             
-            image_controller.image_create(req);
+            //image_controller.image_create(req);
         }
     })
 })
