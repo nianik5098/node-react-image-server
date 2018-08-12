@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import ImagePage from './ImagePage/ImagePage';
+import ImageGallery from './ImagePage/ImageGallery';
+import './ImagePage/imageStyle.css';
 
 export default class LandingPage extends Component {
     constructor(props) {
@@ -35,8 +37,21 @@ export default class LandingPage extends Component {
             <div className="App container-fluid">
                 <Header />
                 <h1> body </h1>
-                <ImagePage />
+                <div className="container">
+                    
+                    <div className="check1"><ImagePage /></div>
+                   
+                    <div className="check"><ImageGallery /></div>
+                </div>
+                
             </div>
         )
     }
 }
+
+/*<div className="container">
+                    
+                    <div className="check1"><ImagePage /></div>
+                   
+                    <div className="check"><ImageGallery /></div>
+                </div>*/

@@ -93,7 +93,7 @@ export default class ImagePage extends Component {
                 <div style={{display: 'flex', flexFlow: 'column'}}>
                     <input type="file" onChange={this.fileChangedHandler}/>
                     <br />
-                    <img src={this.state.fileUrl} alt='' height="256" width="256"/><br />
+                    <img src={this.state.fileUrl} alt='' height="auto" width="256"/><br />
                     <button onClick={this.uploadHandler}>Upload!</button>
                     <br />
                      <div style={{ width: '100px' }}>

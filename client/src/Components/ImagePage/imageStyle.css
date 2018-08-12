@@ -1,0 +1,33 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.container > div * > img {
+    width: 150;
+    height: 100;
+  }
+
+html, body {
+  background-color: #ffeead;
+  /*margin: 10px;*/
+}
+
+.check {
+    flex: 1 1 75%;
+}
+
+.check1 {
+    flex: 1 1 25%;
+}
+
+@media all and (max-width: 700px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .container > div {
+    flex: 1 0 50%;
+  }
+  
+}
+
